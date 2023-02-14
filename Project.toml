@@ -3,6 +3,10 @@ uuid = "accb2a19-7d14-4fef-adf6-2d18346bd8ac"
 authors = ["Algebra-FUN"]
 version = "0.1.0"
 
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+
 [compat]
 julia = "1"
 
