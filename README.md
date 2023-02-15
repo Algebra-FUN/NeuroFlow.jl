@@ -2,9 +2,9 @@
 
 [![Build Status](https://github.com/Algebra-FUN/`NeuroFlow.jl`/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Algebra-FUN/NeuroFlow.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
-`NeuroFlow` is a experimential deep learning framework written in Julia.
+`NeuroFlow` is an experimental deep learning framework written in Julia.
 
-It implements an atomic level dynamic computational graph in pure Julia and provides api just like `Pytorch` style. 
+It implements `auto-gradient` functionality with an atomic level dynamic computational graph and provides api in `Pytorch` style. 
 
 ## Installation
 
