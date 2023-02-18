@@ -1,4 +1,4 @@
-export Variable, Var, Param, value, backward!, grad_lock, @no_grad
+export Variable, Var, Param, value, backward!, AUTOGRAD, @no_grad
 
 abstract type Variable end
 
@@ -20,13 +20,13 @@ mutable struct GradLock
     on::Bool
 end
 
-autograd = GradLock(true)
+const AUTOGRAD = GradLock(true)
 
 macro no_grad(expr)
     return quote
-        autograd.on = false
+        AUTOGRAD.on = false
         local result = $(esc(expr))
-        autograd.on = true
+        AUTOGRAD.on = true
         result
     end
 end
@@ -47,7 +47,7 @@ Base.setproperty!(vararray::Array{<:Variable}, sym::Symbol, val::Union{Real,Arra
 
 Base.zero(::Variable) = Var(0)
 
-forward(f::Function, inputs...;diff=true) = diff && autograd.on ? Var(f(value.(inputs)...), f, inputs) : f(value.(inputs)...)
+forward(f::Function, inputs...;diff=true) = diff && AUTOGRAD.on ? Var(f(value.(inputs)...), f, inputs) : f(value.(inputs)...)
 
 function backward!(var::Variable, grad::Float64)
     if var isa Param

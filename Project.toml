@@ -1,7 +1,7 @@
 name = "NeuroFlow"
 uuid = "accb2a19-7d14-4fef-adf6-2d18346bd8ac"
 authors = ["Algebra-FUN"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"

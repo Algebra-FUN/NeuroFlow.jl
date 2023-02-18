@@ -1,6 +1,7 @@
 @info "required packages loading..."
 using NeuroFlow
-import Distributions: Uniform, Normal, mean
+import Distributions: Uniform, Normal
+import Statistics: mean
 using Plots
 
 # generate some fake data obeyed the linear model
