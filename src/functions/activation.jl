@@ -7,7 +7,7 @@ sigmoid(x) = 1/(1+exp(-x))
 end
 
 relu(x) = x > 0 ? x : zero(x)
-leakyrelu(x) = x > 0 ? x : -0.1*x
+leakyrelu(x;a=0.1) = x > 0 ? x : a*x
 
 function softmax(x::Union{Vector,Matrix})
     ex = exp.(x)
